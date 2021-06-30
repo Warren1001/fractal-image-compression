@@ -22,6 +22,15 @@ public:
 		constructedEmpty = true;
 	}
 
+	RGB(const RGB& rgb) {
+		r = rgb.r;
+		g = rgb.g;
+		b = rgb.b;
+		constructedEmpty = false;
+	}
+
+	virtual ~RGB() {}
+
 	int getRed() {
 		return r;
 	}

@@ -19,6 +19,12 @@ public:
 		}
 	}
 
+	void transform(double* x, double* y) {
+		for (AffineTransformation transformation : transformations) {
+			transformation.transform(x, y);
+		}
+	}
+
 };
 
 #endif
