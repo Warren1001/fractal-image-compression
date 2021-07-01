@@ -251,6 +251,8 @@ void compressImage(std::string input, std::string output, IFSCode ifsCode) {
 	delete[] dest_data;
 	dest.clean();
 	source.clean();
+
+	std::cout << "Finished compressing '" << input << "'." << std::endl;
 }
 
 void generateFractalImage(std::string output, int iterations, int scale, std::list<ProbableAffineTransformation> transformations, RGB* rgb) {
@@ -279,4 +281,6 @@ void generateFractalImage(std::string output, int iterations, int scale, std::li
 
 	delete[] fractal_data;
 	fractal_image.clean();
+
+	std::cout << "Finished generating image '" << output << "'." << std::endl;
 }
