@@ -148,14 +148,14 @@ int main() {
 }
 
 void printUsage() {
-	std::cout << "Usage: compress [file_name_input.bmp] [file_name_output.bmp] one" << std::endl;
-	std::cout << "Usage: compress [file_name_input.bmp] [file_name_output.bmp] two" << std::endl;
-	std::cout << "Usage: compress [file_name_input.bmp] [file_name_output.bmp] three" << std::endl;
-	std::cout << "Usage: compress [file_name_input.bmp] [file_name_output.bmp] [x1,y1,x2,y2,xc,yc;x1,y1,x2,y2,xc,yc;...]" << std::endl;
-	std::cout << "Usage: generate [file_name_output.bmp] [num_interations] default" << std::endl;
-	std::cout << "Usage: generate [file_name_output.bmp] [num_interations] [scale] default" << std::endl;
-	std::cout << "Usage: generate [file_name_output.bmp] [num_interations] [scale] [r,g,b] default" << std::endl;
-	std::cout << "Usage: generate [file_name_output.bmp] [num_interations] [scale] [r,g,b] [x1,y1,x2,y2,xc,yc,p;x1,y1,x2,y2,xc,yc,p;...]" << std::endl;
+	std::cout << "Usage: compress [file_name_input].bmp [file_name_output].bmp one" << std::endl;
+	std::cout << "Usage: compress [file_name_input].bmp [file_name_output].bmp two" << std::endl;
+	std::cout << "Usage: compress [file_name_input].bmp [file_name_output].bmp three" << std::endl;
+	std::cout << "Usage: compress [file_name_input].bmp [file_name_output].bmp [x1,y1,x2,y2,xc,yc;x1,y1,x2,y2,xc,yc;...]" << std::endl;
+	std::cout << "Usage: generate [file_name_output].bmp [num_interations] default" << std::endl;
+	std::cout << "Usage: generate [file_name_output].bmp [num_interations] [scale] default" << std::endl;
+	std::cout << "Usage: generate [file_name_output].bmp [num_interations] [scale] [r,g,b] default" << std::endl;
+	std::cout << "Usage: generate [file_name_output].bmp [num_interations] [scale] [r,g,b] [x1,y1,x2,y2,xc,yc,p;x1,y1,x2,y2,xc,yc,p;...]" << std::endl;
 	std::cout << "Usage: usage" << std::endl;
 	std::cout << "Usage: stop" << std::endl;
 }
