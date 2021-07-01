@@ -13,16 +13,22 @@ public:
 		this->transformations = transformations;
 	}
 
-	void transform(int* x, int* y) {
+	IFSCode() {}
+
+	/*void transform(int* x, int* y) {
 		for (AffineTransformation transformation : transformations) {
 			transformation.transform(x, y);
 		}
-	}
+	}*/
 
 	void transform(double* x, double* y) {
 		for (AffineTransformation transformation : transformations) {
 			transformation.transform(x, y);
 		}
+	}
+
+	bool empty() {
+		return transformations.empty();
 	}
 
 };

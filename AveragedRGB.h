@@ -13,10 +13,6 @@ public:
 		rgbList.push_back(rgb);
 	}
 
-	AveragedRGB() {
-		std::cout << "the defualt constructor was called ------------------------------------------" << std::endl;
-	}
-
 	~AveragedRGB() {
 		rgbList.clear();
 	}

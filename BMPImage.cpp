@@ -4,6 +4,7 @@
 #include "IRGB.h"
 #include <vector>
 #include <iostream>
+#include "AveragedRGB.h"
 
 BMPImage::BMPImage(unsigned char* image_data, int width, int height, int channels) {
 	rgbValues = new RGB*[width * height];
@@ -34,18 +35,20 @@ BMPImage::BMPImage(int width, int height, int channels) {
 }
 
 void BMPImage::setRGB(int x, int y, RGB* rgb) {
-	if (x < 0) std::cout << "x was " << x << std::endl;
-	else if (y < 0) std::cout << "y was " << y << std::endl;
-	else if (x * height + y >= width * height) std::cout << "out of bounds: (" << x << "," << y << ")" << std::endl;
+	RGB* current_rgb = getRGB(x, y);
+	if (current_rgb->empty()) {
+		rgbValues[x * height + y] = new RGB(*rgb);
+	}
+	else if (dynamic_cast<AveragedRGB*>(current_rgb) != nullptr) {
+		AveragedRGB* averaged_rgb = dynamic_cast<AveragedRGB*>(current_rgb);
+		averaged_rgb->addRGB(*rgb);
+	}
 	else {
-		rgbValues[x * height + y] = rgb;
-		//std::cout << "(" << x << "," << y << ")" << std::endl;
+		rgbValues[x * height + y] = new AveragedRGB(*rgb);
 	}
 }
 
 RGB* BMPImage::getRGB(int x, int y) {
-	if (x < 0 || x >= (width * height)) std::cout << "x was " << x << std::endl;
-	if (y < 0 || y >= (width * height)) std::cout << "y was " << y << std::endl;
 	return rgbValues[x * height + y];
 }
 
@@ -56,10 +59,6 @@ unsigned char* BMPImage::serialize() {
 		int x = (i / channels) % width;
 		int y = (i / channels) / width;
 		RGB* rgb = rgbValues[x * height + y];
-		if (rgb == nullptr) {
-			std::cout << "rgb was null for (" << x << "," << y << ")" << std::endl;
-			continue;
-		}
 		image_data[i] = rgb->getRed();
 		image_data[i + 1] = rgb->getGreen();
 		image_data[i + 2] = rgb->getBlue();
@@ -72,5 +71,4 @@ void BMPImage::clean() {
 		delete rgbValues[i];
 	}
 	delete[] rgbValues;
-	std::cout << "cleared bmpimage" << std::endl;
 }

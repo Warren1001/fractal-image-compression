@@ -6,7 +6,7 @@
 #include "RGB.h"
 
 class BMPImage {
-private:
+protected:
 	RGB** rgbValues;
 	int width, height, channels;
 public:

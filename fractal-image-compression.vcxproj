@@ -143,6 +143,8 @@
     <ClCompile Include="AffineTransformation.cpp" />
     <ClCompile Include="BMPImage.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ProbableAffineTransformation.cpp" />
+    <ClCompile Include="ResizableBMPImage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AffineTransformation.h" />
@@ -150,7 +152,10 @@
     <ClInclude Include="BMPImage.h" />
     <ClInclude Include="IFSCode.h" />
     <ClInclude Include="IRGB.h" />
+    <ClInclude Include="ProbableAffineTransformation.h" />
+    <ClInclude Include="ResizableBMPImage.h" />
     <ClInclude Include="RGB.h" />
+    <ClInclude Include="RGBLocation.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_image_write.h" />
   </ItemGroup>
