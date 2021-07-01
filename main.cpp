@@ -54,6 +54,8 @@ int main() {
 
 	while (again == 'y' || again == 'Y') {
 
+		std::cout << "> ";
+
 		std::string input;
 		getline(std::cin, input);
 
